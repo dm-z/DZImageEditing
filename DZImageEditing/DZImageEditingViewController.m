@@ -5,8 +5,6 @@
 
 #import "DZImageEditingViewController.h"
 
-static NSUInteger toolbarHeight = 44;
-
 @interface DZImageEditingViewController ()
 @end
 
