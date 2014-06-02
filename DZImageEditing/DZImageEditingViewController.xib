@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DZImageEditingViewController">
@@ -21,11 +21,10 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9el-kh-tqQ">
-                    <rect key="frame" x="0" y="980" width="768" height="44"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.24999999999999967" contentMode="scaleToFill" id="9el-kh-tqQ">
+                    <rect key="frame" x="0.0" y="980" width="768" height="64"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                    </items>
+                    <items/>
                 </toolbar>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move and Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tGF-wO-O5x">
                     <rect key="frame" x="107" y="992" width="641" height="21"/>
@@ -33,19 +32,27 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <navigationBar contentMode="scaleToFill" id="9Vx-ld-J6g">
-                    <rect key="frame" x="0" y="0" width="768" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="2YO-NN-060">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <navigationItem title="Title" id="x20-Ec-ClV">
-                            <barButtonItem id="BN1-Av-DMP" key="leftBarButtonItem" systemItem="cancel"/>
-                            <barButtonItem id="MtX-I7-2hD" key="rightBarButtonItem" systemItem="done"/>
-                        </navigationItem>
+                        <barButtonItem systemItem="cancel" id="3CT-IF-L2V"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1HK-4n-cRx"/>
+                        <barButtonItem systemItem="done" id="t9a-NZ-bb9"/>
                     </items>
-                </navigationBar>
+                </toolbar>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uhF-lC-F9e">
+                    <rect key="frame" x="162" y="31" width="445" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" alpha="1" colorSpace="calibratedRGB" red="0.471" green="0.694" blue="0.757"/>
+            <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="306" y="430"/>
         </view>
     </objects>
 </document>
