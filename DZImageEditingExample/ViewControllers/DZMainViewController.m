@@ -7,24 +7,15 @@
 //
 
 #import "DZMainViewController.h"
+#import "DZImageEditingViewController.h"
 
-@interface DZMainViewController ()
+@interface DZMainViewController () <UIImagePickerControllerDelegate>
 @property (retain, nonatomic) UIImagePickerController *pickerController;
 @end
 
 @implementation DZMainViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - actions
 
 - (IBAction)standardImagePicker
 {
@@ -36,5 +27,30 @@
                      completion:nil];
 }
 
+- (IBAction)advancedImagePicker
+{
+    UIImagePickerController *pickerController = [UIImagePickerController new];
+    pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    pickerController.delegate = self;
+    [self presentViewController:pickerController
+                       animated:YES
+                     completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        DZImageEditingViewController *editingViewController = [DZImageEditingViewController new];
+        editingViewController.image = image;
+
+        [self presentViewController:editingViewController
+                           animated:YES
+                         completion:nil];
+    }];
+}
 
 @end

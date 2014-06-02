@@ -7,4 +7,7 @@
 
 
 @interface DZImageEditingViewController : UIViewController
+@property (retain, nonatomic) UIImage *image;
+@property (retain, nonatomic) UIView *overlayView;
+@property (nonatomic) CGRect cropRect;
 @end

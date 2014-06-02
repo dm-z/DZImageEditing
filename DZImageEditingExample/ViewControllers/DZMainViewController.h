@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DZMainViewController : UIViewController
+@interface DZMainViewController : UIViewController <UINavigationControllerDelegate>
 
 @end
