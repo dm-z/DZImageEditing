@@ -1,5 +1,5 @@
 //
-//  DZViewController.h
+//  DZMainViewController.h
 //  DZImageEditing
 //
 //  Created by Dmitry Zozulya on 02.06.14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DZViewController : UIViewController
+@interface DZMainViewController : UIViewController
 
 @end
