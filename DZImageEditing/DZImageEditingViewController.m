@@ -6,6 +6,7 @@
 #import "DZImageEditingViewController.h"
 
 @interface DZImageEditingViewController ()
+
 @end
 
 @implementation DZImageEditingViewController
@@ -14,5 +15,13 @@
 {
     [super viewDidLoad];
 }
+
+#pragma mark - actions
+
+- (IBAction)cancelEditing
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
