@@ -15,6 +15,8 @@
 
 @implementation DZImageEditingController
 
+#pragma mark - view lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +34,16 @@
     if (self.overlayView) {
         [self.view addSubview:self.overlayView];
     }
+}
+
+#pragma mark - getters
+
+- (CGRect)cropRect
+{
+    if (CGRectEqualToRect(_cropRect, CGRectZero)) {
+        _cropRect = [UIScreen mainScreen].bounds;
+    }
+    return _cropRect;
 }
 
 #pragma mark - actions

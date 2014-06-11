@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rvj-WL-lC3">
+                                <rect key="frame" x="60" y="184" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-cP-2sY">
                                 <rect key="frame" x="20" y="20" width="280" height="30"/>
                                 <state key="normal" title="Standard ImagePicker with editing">
@@ -35,15 +39,11 @@
                                     <action selector="advancedImagePicker" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3q4-AG-lVE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rvj-WL-lC3">
-                                <rect key="frame" x="60" y="184" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Rvj-WL-lC3" secondAttribute="centerY" id="7ic-se-Lxb"/>
-                            <constraint firstItem="Rvj-WL-lC3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="60" id="j12-uf-1Jv"/>
+                            <constraint firstItem="Rvj-WL-lC3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" priority="100" constant="60" id="j12-uf-1Jv"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Rvj-WL-lC3" secondAttribute="bottom" priority="100" constant="184" id="mdQ-7X-0e7"/>
                             <constraint firstAttribute="centerX" secondItem="Rvj-WL-lC3" secondAttribute="centerX" id="w3T-xj-HyQ"/>
                         </constraints>

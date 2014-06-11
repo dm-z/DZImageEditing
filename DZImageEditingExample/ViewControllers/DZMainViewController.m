@@ -59,7 +59,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         DZImageEditingController *editingViewController = [DZImageEditingController new];
         editingViewController.image = image;
         editingViewController.overlayView = self.overlayImageView;
-        editingViewController.cropRect = self.frameRect;
+        //editingViewController.cropRect = self.frameRect;
         editingViewController.delegate = self;
 
         [self presentViewController:editingViewController
