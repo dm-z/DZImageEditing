@@ -10,6 +10,7 @@ static CGFloat const scaleMultiplier = 3.0f;
 
 @interface DZImageEditingViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (retain, nonatomic) UIImageView *imageView;
 @end
 
 @implementation DZImageEditingViewController
@@ -17,8 +18,8 @@ static CGFloat const scaleMultiplier = 3.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
-    [self.scrollView addSubview:imageView];
+    self.imageView = [[UIImageView alloc] initWithImage:self.image];
+    [self.scrollView addSubview:self.imageView];
     self.scrollView.contentSize = self.image.size;
     self.scrollView.scrollEnabled = YES;
     
@@ -66,7 +67,7 @@ static CGFloat const scaleMultiplier = 3.0f;
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return self.overlayView;
+    return self.imageView;
 }
 
 @end
