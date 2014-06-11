@@ -3,15 +3,15 @@
 // Copyright (c) 2014 MLSDev. All rights reserved.
 //
 
-#import "SSImageHelper.h"
+#import "DZImageHelper.h"
 
 
-@implementation SSImageHelper
+@implementation DZImageHelper
 
 + (UIImage *)cropImage:(UIImage *)image
               WithRect:(CGRect)rect
 {
-    UIImage *resizedImage = [SSImageHelper resizeImage:image];
+    UIImage *resizedImage = [DZImageHelper resizeImage:image];
     CGFloat scale = [[UIScreen mainScreen] scale];
     CGRect rectWithScale = CGRectMake(rect.origin.x * scale, rect.origin.y * scale, rect.size.width * scale, rect.size.height * scale);
     CGImageRef imageRef = CGImageCreateWithImageInRect([resizedImage CGImage], rectWithScale);

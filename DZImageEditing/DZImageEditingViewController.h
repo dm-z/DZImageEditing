@@ -10,4 +10,7 @@
 @property (retain, nonatomic) UIImage *image;
 @property (retain, nonatomic) UIView *overlayView;
 @property (nonatomic) CGRect cropRect;
+@property (nonatomic) CGFloat defaultScale;
+@property (nonatomic) CGFloat minimumScale;
+@property (nonatomic) CGFloat maximumScale;
 @end

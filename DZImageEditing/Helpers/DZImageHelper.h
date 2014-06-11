@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SSImageHelper : NSObject
+@interface DZImageHelper : NSObject
 
 + (UIImage *)cropImage:(UIImage *)image WithRect:(CGRect)rect;
 + (UIImage *)cropImage:(UIImage *)image

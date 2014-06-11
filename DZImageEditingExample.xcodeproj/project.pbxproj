@@ -18,8 +18,8 @@
 		B8CC9E8B9B36BCA08278248D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC92C06C4CCBDF81FAE3C9 /* main.m */; };
 		B8CC9F6BAA3E3384178DA453 /* DZImageEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC9626BD3EA04B7E7A76F1 /* DZImageEditingViewController.m */; };
 		B8CC9F88068D9B8BEC1A7C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8CC98A77C5238E89F204AD3 /* InfoPlist.strings */; };
-		F783474A19483300003E6CC5 /* SSImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F783474919483300003E6CC5 /* SSImageHelper.m */; };
-		F783474D19484DCD003E6CC5 /* overlayImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F783474C19484DCD003E6CC5 /* overlayImage.png */; };
+		F783474A19483300003E6CC5 /* DZImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F783474919483300003E6CC5 /* DZImageHelper.m */; };
+		F7834750194887A1003E6CC5 /* overlay200.png in Resources */ = {isa = PBXBuildFile; fileRef = F783474F194887A1003E6CC5 /* overlay200.png */; };
 		F78B806E193CC0A00009BE09 /* DZImageEditingViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78B806D193CC0A00009BE09 /* DZImageEditingViewController~iphone.xib */; };
 		F78B8070193CC0BA0009BE09 /* DZImageEditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78B806F193CC0BA0009BE09 /* DZImageEditingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -43,9 +43,9 @@
 		B8CC9C6B9634C742B075D0A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B8CC9CB36447B1C32D376930 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B8CC9FA9FEA36405534C5A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DZImageEditingExample/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
-		F783474819483300003E6CC5 /* SSImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSImageHelper.h; sourceTree = "<group>"; };
-		F783474919483300003E6CC5 /* SSImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSImageHelper.m; sourceTree = "<group>"; };
-		F783474C19484DCD003E6CC5 /* overlayImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlayImage.png; sourceTree = "<group>"; };
+		F783474819483300003E6CC5 /* DZImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZImageHelper.h; sourceTree = "<group>"; };
+		F783474919483300003E6CC5 /* DZImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZImageHelper.m; sourceTree = "<group>"; };
+		F783474F194887A1003E6CC5 /* overlay200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay200.png; sourceTree = "<group>"; };
 		F78B806D193CC0A00009BE09 /* DZImageEditingViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DZImageEditingViewController~iphone.xib"; sourceTree = "<group>"; };
 		F78B806F193CC0BA0009BE09 /* DZImageEditingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DZImageEditingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 		B8CC9CFE5B7EFCC31DE6026F /* DZImageEditingExample */ = {
 			isa = PBXGroup;
 			children = (
-				F783474B19484DCD003E6CC5 /* Resources */,
+				F783474E194887A1003E6CC5 /* Resources */,
 				B8CC9E89F2167A2BAB2B910B /* Supporting Files */,
 				B8CC945105B26000E4E865AF /* Images.xcassets */,
 				B8CC9B30AC1B2E32DA1CE3E2 /* ViewControllers */,
@@ -143,16 +143,16 @@
 		F783474719483300003E6CC5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F783474819483300003E6CC5 /* SSImageHelper.h */,
-				F783474919483300003E6CC5 /* SSImageHelper.m */,
+				F783474819483300003E6CC5 /* DZImageHelper.h */,
+				F783474919483300003E6CC5 /* DZImageHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		F783474B19484DCD003E6CC5 /* Resources */ = {
+		F783474E194887A1003E6CC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F783474C19484DCD003E6CC5 /* overlayImage.png */,
+				F783474F194887A1003E6CC5 /* overlay200.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,12 +208,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F783474D19484DCD003E6CC5 /* overlayImage.png in Resources */,
 				B8CC9F88068D9B8BEC1A7C1D /* InfoPlist.strings in Resources */,
 				B8CC9C1679499B77F9C1F9D2 /* Images.xcassets in Resources */,
 				F78B8070193CC0BA0009BE09 /* DZImageEditingViewController.xib in Resources */,
 				B8CC96C78CF229D96DAECDD4 /* Main_iPad.storyboard in Resources */,
 				B8CC9E1FDB65E44117180B49 /* Main_iPhone.storyboard in Resources */,
+				F7834750194887A1003E6CC5 /* overlay200.png in Resources */,
 				F78B806E193CC0A00009BE09 /* DZImageEditingViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CC9E8B9B36BCA08278248D /* main.m in Sources */,
-				F783474A19483300003E6CC5 /* SSImageHelper.m in Sources */,
+				F783474A19483300003E6CC5 /* DZImageHelper.m in Sources */,
 				B8CC9CFE852FFB72375AE907 /* DZMainViewController.m in Sources */,
 				B8CC9110C090176364F8B368 /* DZAppDelegate.m in Sources */,
 				B8CC9F6BAA3E3384178DA453 /* DZImageEditingViewController.m in Sources */,
