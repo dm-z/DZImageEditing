@@ -6,7 +6,8 @@
 #import "DZImageEditingViewController.h"
 
 @interface DZImageEditingViewController ()
-
+@property (weak, nonatomic) IBOutlet UIView *overlay;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation DZImageEditingViewController
@@ -14,6 +15,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
+    [self.scrollView addSubview:imageView];
+    self.scrollView.contentSize = self.image.size;
+    self.scrollView.scrollEnabled = YES;
+    
+    self.overlay = self.overlayView;
 }
 
 #pragma mark - actions
@@ -22,6 +29,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 
 @end

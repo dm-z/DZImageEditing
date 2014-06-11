@@ -11,9 +11,17 @@
 
 @interface DZMainViewController () <UIImagePickerControllerDelegate>
 @property (retain, nonatomic) UIImagePickerController *pickerController;
+@property (retain, nonatomic) UIImageView *overlayImageView;
 @end
 
 @implementation DZMainViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UIImage *overlayImage = [UIImage imageNamed:@"overlayImage"];
+    self.overlayImageView = [[UIImageView alloc] initWithImage:overlayImage];
+}
 
 #pragma mark - actions
 
@@ -46,6 +54,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         DZImageEditingViewController *editingViewController = [DZImageEditingViewController new];
         editingViewController.image = image;
+        editingViewController.overlayView = self.overlayImageView;
 
         [self presentViewController:editingViewController
                            animated:YES
