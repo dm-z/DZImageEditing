@@ -11,7 +11,6 @@
 #import "DZImageEditingControllerDelegate.h"
 
 @interface DZMainViewController () <UIImagePickerControllerDelegate, DZImageEditingControllerDelegate>
-@property (retain, nonatomic) UIImagePickerController *pickerController;
 @property (retain, nonatomic) UIImageView *overlayImageView;
 @property (nonatomic) CGRect frameRect;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -59,7 +58,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         DZImageEditingController *editingViewController = [DZImageEditingController new];
         editingViewController.image = image;
         editingViewController.overlayView = self.overlayImageView;
-        //editingViewController.cropRect = self.frameRect;
+        editingViewController.cropRect = self.frameRect;
         editingViewController.delegate = self;
 
         [self presentViewController:editingViewController
@@ -88,8 +87,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (UIImageView *)createOverlayImageViewWithImage:(UIImage *)image
 {
-    CGFloat newX = self.view.bounds.size.width / 2 - image.size.width / 2;
-    CGFloat newY = self.view.bounds.size.height / 2 - image.size.height / 2;
+    CGFloat newX = [UIScreen mainScreen].bounds.size.width / 2 - image.size.width / 2;
+    CGFloat newY = [UIScreen mainScreen].bounds.size.height / 2 - image.size.height / 2;
     self.frameRect = CGRectMake(newX, newY, image.size.width, image.size.height);
     return [[UIImageView alloc] initWithFrame:self.frameRect];
 }
