@@ -6,8 +6,6 @@
 #import "DZImageEditingViewController.h"
 #import "DZImageHelper.h"
 
-static CGFloat const scaleMultiplier = 3.0f;
-
 @interface DZImageEditingViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) UIImageView *imageView;
@@ -18,6 +16,8 @@ static CGFloat const scaleMultiplier = 3.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //adding image to scrollView
     self.imageView = [[UIImageView alloc] initWithImage:self.image];
     [self.scrollView addSubview:self.imageView];
     self.scrollView.contentSize = self.image.size;
@@ -32,24 +32,9 @@ static CGFloat const scaleMultiplier = 3.0f;
         [self.scrollView setContentInset:UIEdgeInsetsMake(top, left, bottom, right)];
     }
     
-    if (self.minimumScale) {
-        self.scrollView.minimumZoomScale = self.minimumScale;
-    } else {
-        self.scrollView.minimumZoomScale = [DZImageHelper minimumScaleFromSize:self.image.size
-                                                               toFitTargetSize:self.view.bounds.size];
-    }
-
-    if (self.maximumScale) {
-        self.scrollView.maximumZoomScale = self.maximumScale;
-    } else {
-        self.scrollView.maximumZoomScale = self.scrollView.minimumZoomScale * scaleMultiplier;
-    }
-
-    if (self.defaultScale) {
-        self.scrollView.zoomScale = self.defaultScale;
-    } else {
-        self.scrollView.zoomScale = self.minimumScale * scaleMultiplier / 2;
-    }
+    [self setupMinimumScale];
+    [self setupMaximumScale];
+    [self setupDefaultScale];
     
     if (self.overlayView) {
         [self.view addSubview: self.overlayView];
@@ -68,6 +53,40 @@ static CGFloat const scaleMultiplier = 3.0f;
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageView;
+}
+
+#pragma mark - private
+
+- (void)setupMinimumScale
+{
+    if (self.minimumScale) {
+        self.scrollView.minimumZoomScale = self.minimumScale;
+    } else {
+        self.scrollView.minimumZoomScale = [DZImageHelper minimumScaleFromSize:self.image.size
+                                                               toFitTargetSize:self.cropRect.size];
+    }
+    NSLog(@"minScale = %f", self.scrollView.minimumZoomScale);
+}
+
+- (void)setupMaximumScale
+{
+    if (self.maximumScale) {
+        self.scrollView.maximumZoomScale = self.maximumScale;
+    } else {
+        self.scrollView.maximumZoomScale = 2 * [DZImageHelper minimumScaleFromSize:self.image.size
+                                                                   toFitTargetSize:self.view.bounds.size];
+    }
+    NSLog(@"maxScale = %f", self.scrollView.maximumZoomScale);
+}
+
+- (void)setupDefaultScale
+{
+    if (self.defaultScale) {
+        self.scrollView.zoomScale = self.defaultScale;
+    } else {
+        self.scrollView.zoomScale = self.scrollView.maximumZoomScale / 2;
+    }
+    NSLog(@"scale = %f", self.scrollView.zoomScale);
 }
 
 @end
