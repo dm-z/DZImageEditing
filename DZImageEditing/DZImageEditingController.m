@@ -71,6 +71,8 @@
 
 #pragma mark - private
 
+
+//TODO change theese methods to getters
 - (void)setupMinimumScale
 {
     if (self.minimumScale) {
