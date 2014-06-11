@@ -25,9 +25,10 @@
     self.scrollView.scrollEnabled = YES;
 
     //scroll view content offset
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
     if (! CGRectEqualToRect(self.cropRect, CGRectZero)) {
-        CGFloat bottom = self.view.bounds.size.height - self.cropRect.size.height - self.cropRect.origin.y;
-        CGFloat right = self.view.bounds.size.width - self.cropRect.size.width - self.cropRect.origin.x;
+        CGFloat bottom = screenBounds.size.height - self.cropRect.size.height - self.cropRect.origin.y;
+        CGFloat right = screenBounds.size.width - self.cropRect.size.width - self.cropRect.origin.x;
         CGFloat top = self.cropRect.origin.y;
         CGFloat left = self.cropRect.origin.x;
         [self.scrollView setContentInset:UIEdgeInsetsMake(top, left, bottom, right)];
@@ -77,7 +78,7 @@
     }
     else {
         self.scrollView.maximumZoomScale = 2 * [DZImageHelper minimumScaleFromSize:self.image.size
-                                                                   toFitTargetSize:self.view.bounds.size];
+                                                                   toFitTargetSize:[UIScreen mainScreen].bounds.size];
     }
     NSLog(@"maxScale = %f", self.scrollView.maximumZoomScale);
 }
@@ -88,7 +89,7 @@
         self.scrollView.zoomScale = self.defaultScale;
     }
     else {
-        self.scrollView.zoomScale = self.scrollView.maximumZoomScale / 2;
+        self.scrollView.zoomScale = 1.0f;
     }
     NSLog(@"scale = %f", self.scrollView.zoomScale);
 }

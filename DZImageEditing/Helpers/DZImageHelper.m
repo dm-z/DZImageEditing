@@ -42,26 +42,6 @@
 
 #pragma mark - private
 
-+ (UIImage *)maskImage:(UIImage *)image
-              withMask:(UIImage *)maskImage
-{
-
-    CGImageRef maskRef = maskImage.CGImage;
-
-    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-            CGImageGetHeight(maskRef),
-            CGImageGetBitsPerComponent(maskRef),
-            CGImageGetBitsPerPixel(maskRef),
-            CGImageGetBytesPerRow(maskRef),
-            CGImageGetDataProvider(maskRef), NULL, false);
-
-    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
-    UIImage *maskedImage = [UIImage imageWithCGImage:masked];
-    CGImageRelease(mask);
-    CGImageRelease(masked);
-    return maskedImage;
-}
-
 + (UIImage *)resizeImage:(UIImage *)image
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
