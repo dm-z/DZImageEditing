@@ -9,18 +9,6 @@
 @implementation DZImageHelper
 
 + (UIImage *)cropImage:(UIImage *)image
-              WithRect:(CGRect)rect
-{
-    UIImage *resizedImage = [DZImageHelper resizeImage:image];
-    CGFloat scale = [[UIScreen mainScreen] scale];
-    CGRect rectWithScale = CGRectMake(rect.origin.x * scale, rect.origin.y * scale, rect.size.width * scale, rect.size.height * scale);
-    CGImageRef imageRef = CGImageCreateWithImageInRect([resizedImage CGImage], rectWithScale);
-    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
-    return croppedImage;
-}
-
-+ (UIImage *)cropImage:(UIImage *)image
         fromScrollView:(UIScrollView *)scrollView
               withSize:(CGSize)size
 {
@@ -41,16 +29,6 @@
 }
 
 #pragma mark - private
-
-+ (UIImage *)resizeImage:(UIImage *)image
-{
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    CGFloat screenScale = [[UIScreen mainScreen] scale];
-    CGSize screenSize = CGSizeMake(screenBounds.size.height * screenScale, screenBounds.size.width * screenScale);
-    UIImage *newImage = [self imageWithImage:image scaledToSize:screenSize];
-
-    return newImage;
-}
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize
 {

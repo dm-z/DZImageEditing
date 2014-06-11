@@ -5,12 +5,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol DZImageEditingControllerDelegate;
 
-@interface DZImageEditingViewController : UIViewController
+@interface DZImageEditingController : UIViewController
+
 @property (retain, nonatomic) UIImage *image;
 @property (retain, nonatomic) UIView *overlayView;
 @property (nonatomic) CGRect cropRect;
 @property (nonatomic) CGFloat defaultScale;
 @property (nonatomic) CGFloat minimumScale;
 @property (nonatomic) CGFloat maximumScale;
+@property (nonatomic, weak) id <DZImageEditingControllerDelegate> delegate;
 @end

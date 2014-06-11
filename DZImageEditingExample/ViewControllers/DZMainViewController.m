@@ -7,12 +7,14 @@
 //
 
 #import "DZMainViewController.h"
-#import "DZImageEditingViewController.h"
+#import "DZImageEditingController.h"
+#import "DZImageEditingControllerDelegate.h"
 
-@interface DZMainViewController () <UIImagePickerControllerDelegate>
+@interface DZMainViewController () <UIImagePickerControllerDelegate, DZImageEditingControllerDelegate>
 @property (retain, nonatomic) UIImagePickerController *pickerController;
 @property (retain, nonatomic) UIImageView *overlayImageView;
 @property (nonatomic) CGRect frameRect;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation DZMainViewController
@@ -54,15 +56,32 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self dismissViewControllerAnimated:NO completion:^{
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        DZImageEditingViewController *editingViewController = [DZImageEditingViewController new];
+        DZImageEditingController *editingViewController = [DZImageEditingController new];
         editingViewController.image = image;
         editingViewController.overlayView = self.overlayImageView;
         editingViewController.cropRect = self.frameRect;
+        editingViewController.delegate = self;
 
         [self presentViewController:editingViewController
                            animated:YES
                          completion:nil];
     }];
+}
+
+#pragma mark - DZImageEditingControllerDelegate
+
+- (void)imageEditingControllerDidCancel:(DZImageEditingController *)editingController
+{
+    [editingController dismissViewControllerAnimated:YES
+                                          completion:nil];
+}
+
+- (void)imageEditingController:(DZImageEditingController *)editingController
+     didFinishEditingWithImage:(UIImage *)editedImage
+{
+    [self.imageView setImage:editedImage];
+    [editingController dismissViewControllerAnimated:YES
+                                          completion:nil];
 }
 
 #pragma mark - private

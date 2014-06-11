@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DZImageEditingViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DZImageEditingController">
             <connections>
                 <outlet property="scrollView" destination="dS3-HJ-GKd" id="vpy-Ln-lMt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aSd-3G-KCT"/>
@@ -32,7 +32,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ofa-Nd-CYt"/>
-                        <barButtonItem title="Choose" id="bII-M7-W3E"/>
+                        <barButtonItem title="Choose" id="bII-M7-W3E">
+                            <connections>
+                                <action selector="endedEditing" destination="-1" id="uv7-nY-KQh"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>

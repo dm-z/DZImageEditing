@@ -8,7 +8,6 @@
 
 @interface DZImageHelper : NSObject
 
-+ (UIImage *)cropImage:(UIImage *)image WithRect:(CGRect)rect;
 + (UIImage *)cropImage:(UIImage *)image
         fromScrollView:(UIScrollView *)scrollView
               withSize:(CGSize)size;
