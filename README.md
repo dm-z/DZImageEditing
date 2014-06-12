@@ -20,3 +20,7 @@ With **DZImageEditing** you can:
  - select crop rect, so you'll get only area that you need
  - move/scale your image in a way you need it without limitations
 ![Demo](https://raw.githubusercontent.com/DZozulya/DZImageEditing/master/DemoGifs/DZImageEditing.gif)
+
+Version
+----
+1.0
