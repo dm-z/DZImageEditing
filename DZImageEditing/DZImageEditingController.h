@@ -9,7 +9,10 @@
 
 @interface DZImageEditingController : UIViewController
 
+//required
 @property (retain, nonatomic) UIImage *image;
+
+//optional
 @property (retain, nonatomic) UIView *overlayView;
 @property (nonatomic) CGRect cropRect;
 @property (nonatomic) CGFloat defaultScale;
