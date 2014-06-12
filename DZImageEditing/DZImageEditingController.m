@@ -67,7 +67,8 @@
 - (CGFloat)defaultScale
 {
     if (! _defaultScale) {
-        _defaultScale = 1.0f;
+        _defaultScale = [DZImageHelper minimumScaleFromSize:self.image.size
+                                            toFitTargetSize:[UIScreen mainScreen].bounds.size];
     }
     return _defaultScale;
 }

@@ -42,7 +42,7 @@
 + (UIImage *)cropImage:(UIImage *)image withRect:(CGRect)rect
 {
     CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], rect);
-    UIImage *resultImage = [UIImage imageWithCGImage:imageRef];
+    UIImage *resultImage = [UIImage imageWithCGImage:imageRef scale:image.scale orientation:image.imageOrientation];
     CGImageRelease(imageRef);
     return resultImage;
 }
