@@ -24,6 +24,32 @@ With **DZImageEditing** you can:
 
 ![Demo](https://raw.githubusercontent.com/DZozulya/DZImageEditing/master/DemoGifs/DZImageEditing.gif)
 
+## Using
+Init **DZImageEditing** with 'alloc' 'init', and set parameters:
+```objective-c
+DZImageEditingController *editingViewController = [DZImageEditingController new];
+editingViewController.image = image;
+editingViewController.overlayView = overlayImageView;
+editingViewController.cropRect = frameRect;
+editingViewController.delegate = self;
+editingViewController.minimumScale = 1.0f;
+editingViewController.maximumScale = 2.0f;
+editingViewController.defaultScale = 1.5f;
+```
+The only required parameter is 'image', all others are optional, and will be setted automaticaly to default values.
+
+**DZImageEditingControllerDelegate** got two optional methods:
+For cropped image
+```objective-c
+- (void)imageEditingController:(DZImageEditingController *)editingController
+     didFinishEditingWithImage:(UIImage *)editedImage;
+```
+
+If user canceled editing
+```objective-c
+- (void)imageEditingControllerDidCancel:(DZImageEditingController *)editingController;
+```
+
 Version
 ----
 1.0
