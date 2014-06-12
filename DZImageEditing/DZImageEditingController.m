@@ -27,9 +27,9 @@
     self.scrollView.scrollEnabled = YES;
 
     [self setScrollViewOffset];
-    [self setupMinimumScale];
-    [self setupMaximumScale];
-    [self setupDefaultScale];
+    self.scrollView.minimumZoomScale = self.minimumScale;
+    self.scrollView.maximumZoomScale = self.maximumScale;
+    self.scrollView.zoomScale = self.defaultScale;
 
     if (self.overlayView) {
         [self.view addSubview:self.overlayView];
@@ -44,6 +44,32 @@
         _cropRect = [UIScreen mainScreen].bounds;
     }
     return _cropRect;
+}
+
+- (CGFloat)minimumScale
+{
+    if (! _minimumScale) {
+        _minimumScale = [DZImageHelper minimumScaleFromSize:self.image.size
+                                            toFitTargetSize:self.cropRect.size];
+    }
+    return _minimumScale;
+}
+
+- (CGFloat)maximumScale
+{
+    if (! _maximumScale) {
+        _maximumScale = 2 * [DZImageHelper minimumScaleFromSize:self.image.size
+                                                toFitTargetSize:[UIScreen mainScreen].bounds.size];
+    }
+    return _maximumScale;
+}
+
+- (CGFloat)defaultScale
+{
+    if (! _defaultScale) {
+        _defaultScale = 1.0f;
+    }
+    return _defaultScale;
 }
 
 #pragma mark - actions
@@ -71,53 +97,14 @@
 
 #pragma mark - private
 
-
-//TODO change theese methods to getters
-- (void)setupMinimumScale
-{
-    if (self.minimumScale) {
-        self.scrollView.minimumZoomScale = self.minimumScale;
-    }
-    else {
-        self.scrollView.minimumZoomScale = [DZImageHelper minimumScaleFromSize:self.image.size
-                                                               toFitTargetSize:self.cropRect.size];
-    }
-    NSLog(@"minScale = %f", self.scrollView.minimumZoomScale);
-}
-
-- (void)setupMaximumScale
-{
-    if (self.maximumScale) {
-        self.scrollView.maximumZoomScale = self.maximumScale;
-    }
-    else {
-        self.scrollView.maximumZoomScale = 2 * [DZImageHelper minimumScaleFromSize:self.image.size
-                                                                   toFitTargetSize:[UIScreen mainScreen].bounds.size];
-    }
-    NSLog(@"maxScale = %f", self.scrollView.maximumZoomScale);
-}
-
-- (void)setupDefaultScale
-{
-    if (self.defaultScale) {
-        self.scrollView.zoomScale = self.defaultScale;
-    }
-    else {
-        self.scrollView.zoomScale = 1.0f;
-    }
-    NSLog(@"scale = %f", self.scrollView.zoomScale);
-}
-
 - (void)setScrollViewOffset
 {
     CGRect screenBounds = [UIScreen mainScreen].bounds;
-    if (! CGRectEqualToRect(self.cropRect, CGRectZero)) {
-        CGFloat bottom = screenBounds.size.height - self.cropRect.size.height - self.cropRect.origin.y;
-        CGFloat right = screenBounds.size.width - self.cropRect.size.width - self.cropRect.origin.x;
-        CGFloat top = self.cropRect.origin.y;
-        CGFloat left = self.cropRect.origin.x;
-        [self.scrollView setContentInset:UIEdgeInsetsMake(top, left, bottom, right)];
-    }
+    CGFloat bottom = screenBounds.size.height - self.cropRect.size.height - self.cropRect.origin.y;
+    CGFloat right = screenBounds.size.width - self.cropRect.size.width - self.cropRect.origin.x;
+    CGFloat top = self.cropRect.origin.y;
+    CGFloat left = self.cropRect.origin.x;
+    [self.scrollView setContentInset:UIEdgeInsetsMake(top, left, bottom, right)];
 }
 
 @end
