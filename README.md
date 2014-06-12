@@ -50,6 +50,9 @@ If user canceled editing
 - (void)imageEditingControllerDidCancel:(DZImageEditingController *)editingController;
 ```
 
-Version
-----
-1.0
+## Requirements
+- iOS >= 7.0 (may work on iOS6, but will need light design changes)
+- ARC
+
+##Version
+1.0.0
