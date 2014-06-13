@@ -35,7 +35,9 @@ Import 'DZImageEditingController.h' and 'DZImageEditingControllerDelegate.h'
 Init **DZImageEditing** with 'alloc' 'init', and set parameters:
 ```objective-c
 DZImageEditingController *editingViewController = [DZImageEditingController new];
+//required
 editingViewController.image = image;
+//optional
 editingViewController.overlayView = overlayImageView;
 editingViewController.cropRect = frameRect;
 editingViewController.delegate = self;
