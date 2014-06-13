@@ -31,21 +31,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZM-hE-qZF">
-                                <rect key="frame" x="15" y="116" width="280" height="40"/>
+                                <rect key="frame" x="20" y="68" width="280" height="40"/>
                                 <state key="normal" title="ImagePicker with DZImageEditing">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="advancedImagePicker" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3q4-AG-lVE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-0l-XCm">
-                                <rect key="frame" x="20" y="68" width="280" height="40"/>
-                                <state key="normal" title="Standard ImagePicker with overlay hack">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="standardImagePickerWithHack" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jAk-MZ-AQS"/>
                                 </connections>
                             </button>
                         </subviews>

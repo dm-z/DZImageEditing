@@ -11,7 +11,6 @@
 		B8CC9110C090176364F8B368 /* DZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC94C53FEECC59EC439D09 /* DZAppDelegate.m */; };
 		B8CC94FB4A29C3EE11055CE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CC9C6B9634C742B075D0A6 /* CoreGraphics.framework */; };
 		B8CC96C78CF229D96DAECDD4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CC9769B9AC88E24A5C3AA1 /* Main_iPad.storyboard */; };
-		B8CC99D28619722DB9E91551 /* DZHackedImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC9F9DB3D3CDDB9EBE19BB /* DZHackedImagePickerController.m */; };
 		B8CC9BCA91DC51E7105D4DDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CC97B9DF491530D6315EBF /* UIKit.framework */; };
 		B8CC9C1679499B77F9C1F9D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC945105B26000E4E865AF /* Images.xcassets */; };
 		B8CC9CFE852FFB72375AE907 /* DZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC954D9E7EEE76BBD93434 /* DZMainViewController.m */; };
@@ -37,7 +36,6 @@
 		B8CC9626BD3EA04B7E7A76F1 /* DZImageEditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZImageEditingController.m; sourceTree = "<group>"; };
 		B8CC96F49C579D2799164221 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B8CC97B9DF491530D6315EBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B8CC97F1AB40F195DB378867 /* DZHackedImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZHackedImagePickerController.h; sourceTree = "<group>"; };
 		B8CC985F8993205BC77C4E9A /* DZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZAppDelegate.h; sourceTree = "<group>"; };
 		B8CC98B995F27E823D5C31B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8CC98BD0670D9EE5F97C117 /* DZImageEditingExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DZImageEditingExample-Prefix.pch"; sourceTree = "<group>"; };
@@ -45,7 +43,6 @@
 		B8CC9BD7EED05A76A92C69A4 /* DZMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMainViewController.h; sourceTree = "<group>"; };
 		B8CC9C6B9634C742B075D0A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B8CC9CB36447B1C32D376930 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B8CC9F9DB3D3CDDB9EBE19BB /* DZHackedImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZHackedImagePickerController.m; sourceTree = "<group>"; };
 		B8CC9FA9FEA36405534C5A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DZImageEditingExample/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F783474819483300003E6CC5 /* DZImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZImageHelper.h; sourceTree = "<group>"; };
 		F783474919483300003E6CC5 /* DZImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZImageHelper.m; sourceTree = "<group>"; };
@@ -117,8 +114,6 @@
 				B8CC954D9E7EEE76BBD93434 /* DZMainViewController.m */,
 				B8CC9769B9AC88E24A5C3AA1 /* Main_iPad.storyboard */,
 				B8CC9B58D5EF004D91BD1A22 /* Main_iPhone.storyboard */,
-				B8CC9F9DB3D3CDDB9EBE19BB /* DZHackedImagePickerController.m */,
-				B8CC97F1AB40F195DB378867 /* DZHackedImagePickerController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -245,7 +240,6 @@
 				B8CC9CFE852FFB72375AE907 /* DZMainViewController.m in Sources */,
 				B8CC9110C090176364F8B368 /* DZAppDelegate.m in Sources */,
 				B8CC9F6BAA3E3384178DA453 /* DZImageEditingController.m in Sources */,
-				B8CC99D28619722DB9E91551 /* DZHackedImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

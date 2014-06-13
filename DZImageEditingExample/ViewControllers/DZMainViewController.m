@@ -8,7 +8,6 @@
 
 #import "DZMainViewController.h"
 #import "DZImageEditingController.h"
-#import "DZHackedImagePickerController.h"
 
 @interface DZMainViewController () <UIImagePickerControllerDelegate, DZImageEditingControllerDelegate>
 @property (retain, nonatomic) UIImageView *overlayImageView;
@@ -43,16 +42,6 @@
     UIImagePickerController *pickerController = [UIImagePickerController new];
     pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     pickerController.delegate = self;
-    [self presentViewController:pickerController
-                       animated:YES
-                     completion:nil];
-}
-
-- (IBAction)standardImagePickerWithHack
-{
-    DZHackedImagePickerController *pickerController = [DZHackedImagePickerController new];
-    pickerController.overlayView = self.overlayImageView;
-    pickerController.allowsEditing = YES;
     [self presentViewController:pickerController
                        animated:YES
                      completion:nil];
