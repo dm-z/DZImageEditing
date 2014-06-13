@@ -2,7 +2,7 @@ DZImageEditing
 ==============
 DZImageEditing is lightweight replacement for UIImagePickerController editing mode (support overlay, custom crop etc.)
 
-**Original UIImagePickerController** have a lot of limitations:
+Original **UIImagePickerController** editing mode have a lot of limitations:
  - you can't add custom min/max zoomScale
  - you can't add overlay for better positioning
  - you can't give user opportunity to move image borders to the center of the screen
