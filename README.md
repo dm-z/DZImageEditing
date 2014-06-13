@@ -1,3 +1,7 @@
+![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/DZImageEditing/badge.png) &nbsp; 
+![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/DZImageEditing/badge.png) &nbsp; 
+![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+
 DZImageEditing
 ==============
 DZImageEditing is lightweight replacement for UIImagePickerController editing mode (support overlay, custom crop etc.)
