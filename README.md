@@ -35,9 +35,10 @@ editingViewController.minimumScale = 1.0f;
 editingViewController.maximumScale = 2.0f;
 editingViewController.defaultScale = 1.5f;
 ```
-The only required parameter is 'image', all others are optional, and will be setted automaticaly to default values.
+The only required parameter is 'image', all others are optional, and will be set automatically to default values.
 
 **DZImageEditingControllerDelegate** got two optional methods:
+
 For cropped image
 ```objective-c
 - (void)imageEditingController:(DZImageEditingController *)editingController
