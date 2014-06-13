@@ -4,8 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@protocol DZImageEditingControllerDelegate;
+#import "DZImageEditingControllerDelegate.h"
 
 @interface DZImageEditingController : UIViewController
 

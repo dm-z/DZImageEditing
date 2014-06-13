@@ -8,7 +8,6 @@
 
 #import "DZMainViewController.h"
 #import "DZImageEditingController.h"
-#import "DZImageEditingControllerDelegate.h"
 #import "DZHackedImagePickerController.h"
 
 @interface DZMainViewController () <UIImagePickerControllerDelegate, DZImageEditingControllerDelegate>
