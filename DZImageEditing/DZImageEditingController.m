@@ -77,16 +77,20 @@
 
 - (IBAction)cancelEditing
 {
-    [self.delegate imageEditingControllerDidCancel:self];
+    if ([self.delegate respondsToSelector:@selector(imageEditingControllerDidCancel:)]) {
+        [self.delegate imageEditingControllerDidCancel:self];
+    }
 }
 
 - (IBAction)endedEditing
 {
-    UIImage *croppedImage = [DZImageHelper cropImage:self.image
-                                      fromScrollView:self.scrollView
-                                            withSize:self.cropRect.size];
-    [self.delegate imageEditingController:self
-                didFinishEditingWithImage:croppedImage];
+    if ([self.delegate respondsToSelector:@selector(imageEditingController:didFinishEditingWithImage:)]) {
+        UIImage *croppedImage = [DZImageHelper cropImage:self.image
+                                          fromScrollView:self.scrollView
+                                                withSize:self.cropRect.size];
+        [self.delegate imageEditingController:self
+                    didFinishEditingWithImage:croppedImage];
+    }
 }
 
 #pragma mark - delegate
