@@ -8,7 +8,7 @@ Original **UIImagePickerController** editing mode have a lot of limitations:
  - you can't give user opportunity to move image borders to the center of the screen
  - you need to do all cropping work by yourself
 
-With **DZImageEditing** you can:
+With **DZImageEditingController** you can:
  - setup minimum, maximum and default zoomScale value
  - add custom overlay view
  - select crop rect, so you'll get only area that you need
@@ -22,14 +22,14 @@ Import 'DZImageEditingController.h'
 #import "DZImageEditingController.h"
 ```
 
-Init **DZImageEditing** with 'alloc' 'init', and set parameters:
+Init **DZImageEditingController** with 'alloc' 'init', and set parameters:
 ```objective-c
 DZImageEditingController *editingViewController = [DZImageEditingController new];
 //required
 editingViewController.image = image;
 //optional
 editingViewController.overlayView = overlayImageView;
-editingViewController.cropRect = frameRect;
+editingViewController.cropRect = CGRectMake(100.0f, 100.0f, 200.0f, 200.0f);
 editingViewController.delegate = self;
 editingViewController.minimumScale = 1.0f;
 editingViewController.maximumScale = 2.0f;
