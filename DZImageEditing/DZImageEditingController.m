@@ -20,6 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // For cocoapods 0.36.x and use_frameworks! to include the nib files
+    [[NSBundle bundleForClass:[DZImageEditingController class]] loadNibNamed:@"DZImageEditingController" owner:self options:nil];
+    
     //adding image to scrollView
     self.imageView = [[UIImageView alloc] initWithImage:self.image];
     [self.scrollView addSubview:self.imageView];
